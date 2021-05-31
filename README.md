@@ -1,10 +1,8 @@
 # Cloud-Security
-
-
-Automated ELK Stack Deployment
+## Automated ELK Stack Deployment
 The files in this repository were used to configure the network depicted below.
 
-Cloud_Security_ELK.png
+![Cloud_Security_ELK.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Diagrams/Cloud%20Security%20ELK.png)
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of playbooks may be used to install only certain pieces of it, such as Filebeat, Metricbeat, etc.
