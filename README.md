@@ -37,7 +37,7 @@ Metricbeat allows us to output metrics and statistics to the same central locati
 By combining both of these beats we can monitor security to prevent and respond to security incidents.
 The configuration details of each machine may be found below. 
 
-|         Name         |     Function    | IP Address (private) | IP Address (public) |   OS  |
+|         **Name**     |   **Function**  | IP Address (private) | IP Address (public) | **OS**|
 |:--------------------:|:---------------:|:--------------------:|---------------------|:-----:|
 |       Jump Box       |     Gateway     |       10.0.0.4       |    20.185.199.138   | Linux |
 |         Web-1        |      Server     |       10.0.0.9       |     40.121.94.31    | Linux |
@@ -54,7 +54,7 @@ Machines within the network can only be accessed by the Jump Box Provisioner.
 The only machine allowed to access the ELK stack server is the Jump Box Provisioner (10.0.0.4).
 
 A summary of the access policies in place can be found in the table below.
-|         Name        | Publicly Accessible |                    Allowed IP Addresses                   |
+|       **Name**      | Publicly Accessible |                  **Allowed IP Addresses**                 |
 |:-------------------:|:-------------------:|:---------------------------------------------------------:|
 |       Jump Box      |          No         |                 71.115.3.39 on SSH port 22                |
 |        Web-1        |          No         | 10.0.0.4 on SSH port 22 and 71.115.3.39 via Load Balancer |
@@ -64,4 +64,4 @@ A summary of the access policies in place can be found in the table below.
 |    Load Balancer    |          No         |                71.115.3.39 on HTTP port 80                |
 
 # ELK Configuration
-
+Ansible was used to automate configuration of the ELK machine. 
