@@ -12,7 +12,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Cloud_Security_ELK.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Diagrams/Cloud%20Security%20ELK.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of playbooks may be used to install only certain pieces of it, such as Filebeat, Metricbeat, etc.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of playbooks may be used to install only certain pieces of it, such as Filebeat, Metricbeat, ELK installation, and DVWA playbooks.
   - [Metricbeat Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Metricbeat-Playbook.yml)
   - [Filebeat Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Filebeat-Playbook.yml)
   - [Install-Elk Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Install-Elk.yml)
@@ -54,11 +54,14 @@ Machines within the network can only be accessed by the Jump Box Provisioner.
 The only machine allowed to access the ELK stack server is the Jump Box Provisioner (10.0.0.4).
 
 A summary of the access policies in place can be found in the table below.
-|         Name        | Publicly Accessible |                  Allowed IP Addresses                 |
-|:-------------------:|:-------------------:|:-----------------------------------------------------:|
-|       Jump Box      |          No         |               71.115.3.39 on SSH port 22              |
-|        Web-1        |          No         | 10.0.0.4 on SSH port 22 71.115.3.39 via Load Balancer |
-|        Web-2        |          No         | 10.0.0.4 on SSH port 22 71.115.3.39 via Load Balancer |
-|        Web-3        |          No         | 10.0.0.4 on SSH port 22 71.115.3.39 via Load Balancer |
-| Django VM ELK Stack |          No         |  10.0.0.4 on SSH port 22 71.115.3.39 on TCP port 5601 |
-|    Load Balancer    |          No         |              71.115.3.39 on HTTP port 80              |
+|         Name        | Publicly Accessible |                    Allowed IP Addresses                   |
+|:-------------------:|:-------------------:|:---------------------------------------------------------:|
+|       Jump Box      |          No         |                 71.115.3.39 on SSH port 22                |
+|        Web-1        |          No         | 10.0.0.4 on SSH port 22 and 71.115.3.39 via Load Balancer |
+|        Web-2        |          No         | 10.0.0.4 on SSH port 22 and 71.115.3.39 via Load Balancer |
+|        Web-3        |          No         | 10.0.0.4 on SSH port 22 and 71.115.3.39 via Load Balancer |
+| Django VM ELK Stack |          No         |  10.0.0.4 on SSH port 22 and 71.115.3.39 on TCP port 5601 |
+|    Load Balancer    |          No         |                71.115.3.39 on HTTP port 80                |
+
+# ELK Configuration
+
