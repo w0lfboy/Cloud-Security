@@ -1,5 +1,13 @@
 # Cloud-Security
-## Automated ELK Stack Deployment
+## This document contains the following details:
+  - Description of the Topology
+  - Access Policies
+  - ELK Configuration
+    - Beats in Use
+    - Machines Being Monitored
+  - How to Use the Ansible Build
+
+## Cloud Network Diagram
 The files in this repository were used to configure the network depicted below.
 
 ![Cloud_Security_ELK.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Diagrams/Cloud%20Security%20ELK.png)
@@ -9,14 +17,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [Filebeat Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Filebeat-Playbook.yml)
   - [Install-Elk Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Install-Elk.yml)
   - [DVWA Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/DVWA-Playbook.yml)
-
-## This document contains the following details:
-  - Description of the Topology
-  - Access Policies
-  - ELK Configuration
-    - Beats in Use
-    - Machines Being Monitored
-  - How to Use the Ansible Build
 
 # Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
@@ -47,12 +47,18 @@ The configuration details of each machine may be found below.
 
 # Access Policies
 The machines on the internal network are not exposed to the public Internet.
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jump Box Provisioner can accept connections from the Internet. Access to this machine is only allowed from the IP address 71.115.3.39
 
-TODO: Add whitelisted IP addresses
+Machines within the network can only be accessed by the Jump Box Provisioner.
 
-Machines within the network can only be accessed by _____.
-
-TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+The only machine allowed to access the ELK stack server is the Jump Box Provisioner (10.0.0.4).
 
 A summary of the access policies in place can be found in the table below.
+|         Name        | Publicly Accessible |                  Allowed IP Addresses                 |
+|:-------------------:|:-------------------:|:-----------------------------------------------------:|
+|       Jump Box      |          No         |               71.115.3.39 on SSH port 22              |
+|        Web-1        |          No         | 10.0.0.4 on SSH port 22 71.115.3.39 via Load Balancer |
+|        Web-2        |          No         | 10.0.0.4 on SSH port 22 71.115.3.39 via Load Balancer |
+|        Web-3        |          No         | 10.0.0.4 on SSH port 22 71.115.3.39 via Load Balancer |
+| Django VM ELK Stack |          No         |  10.0.0.4 on SSH port 22 71.115.3.39 on TCP port 5601 |
+|    Load Balancer    |          No         |              71.115.3.39 on HTTP port 80              |
