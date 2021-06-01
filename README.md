@@ -25,7 +25,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 # Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-*Load balancing ensures that the application will be highly available, in addition to restricting an overload of traffic to the network.
+*Load balancing ensures that the application will be highly available, in addition to restricting an overload of traffic to the network.*
 
 Our load balancer allows traffic to redirect between the three machines hosting the site to provide availability and security as needed to our site.  This is a crucial part of the **CIA triad** that can be done simply with the load balancer.
 
@@ -50,7 +50,7 @@ The configuration details of each machine may be found below.
 | Django VM  Elk Stack | Monitor servers |       10.1.0.4       |    52.251.117.56    | Linux |
 
 # Access Policies
-The machines on the internal network are not exposed to the public Internet.
+**The machines on the internal network are not exposed to the public Internet.**
 Only the Jump Box Provisioner can accept connections from the Internet. Access to this machine is only allowed from the IP address 71.115.3.39
 
 Machines within the network can only be accessed by the Jump Box Provisioner.
