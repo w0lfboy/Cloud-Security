@@ -8,9 +8,6 @@
   - How to Use the Ansible Build
 
 
-
-
-
 # Cloud Network Diagram
 The files in this repository were used to configure the network depicted below.
 
@@ -147,4 +144,35 @@ Both *filebeat* and *metricbeat* have been installed on the ELK machine 10.1.0.4
 **Metricbeat** allows us to output metrics and statistics to the same central location (Kibana) where we can again analyze it with ease.  
 ![metricbeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/metricbeat%20example.png)
 
+# Using the Playbook
+*In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:*
+`SSH` into the control node and follow the steps below:
+  - Copy the roles file to `/etc/ansible/roles`
+  - Update the `hosts` file to include the webserver IP's and elk IP's (see below for example `hosts` file)
+    ```
+    [webservers]
+    10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.8 ansible_python_interpreter=/usr/bin/python3
+    10.0.0.13 ansible_python_interpreter=/usr/bin/python3
 
+    [elk]
+    10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+  - Run the playbook, and navigate to `http://52.251.117.56:5601/app/kibana` to check that the installation worked as expected. See below on how to run the playbook.
+    ```
+    ansible-playbook install-elk.yml
+  - *It is important to note that in the `install-elk.yml` we label the hosts as `elk` which references `elk` in our `hosts` file.  This is how we differentiate which vm gets the ELK stack downloaded on it.  We don't want it on our `webservers` group, so that is why they are grouped differently.
+
+# Additional Commands that were used and are helpful!
+| COMMAND |	PURPOSE |
+|---------|---------|
+| sudo apt-get update | this will update all packages |
+| sudo apt install docker.io	| install docker application |
+| sudo service docker start	| start the docker application |
+| systemctl status docker	| status of the docker application |
+| sudo docker pull cyberxsecurity/ansible	| download the docker file |
+| sudo docker run -ti cyberxsecurity/ansible bash	| run and create a docker image |
+| sudo docker start <image-name>	| starts the image specified |
+| sudo docker ps -a	| list all active/inactive containers |
+| sudo docker attach <image-name>	| effectively sshing into the ansible |
+| ssh-keygen	| create a ssh key |
+| ansible -m ping all	| check the connection of ansible containers |
