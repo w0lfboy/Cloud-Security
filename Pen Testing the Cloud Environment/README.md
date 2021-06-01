@@ -14,6 +14,10 @@ To start, I attempted to login with an incorrect username `ssh sysadmin@10.0.0.9
 Then, to make it more interesting, I barraged all three Web VMs at once.
 ![SSH_Barrage2.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Pen%20Testing%20the%20Cloud%20Environment/SSH%20barrage2.png)
 
+we can use a `for` loop to make this quicker and easier.
+```
+for i in 10.0.0.9 10.0.0.8 10.0.0.13; do ssh fakelogin@$i; done
+```
 *Based off of our above logs, Kibana is effectively monitoring failed ssh attempts*
 
 # Linux Stress
