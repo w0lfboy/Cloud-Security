@@ -160,7 +160,7 @@ Both *filebeat* and *metricbeat* have been installed on the ELK machine 10.1.0.4
   - Run the playbook, and navigate to `http://52.251.117.56:5601/app/kibana` to check that the installation worked as expected. See below on how to run the playbook.
     ```
     ansible-playbook install-elk.yml
-  - *It is important to note that in the `install-elk.yml` we label the hosts as `elk` which references `elk` in our `hosts` file.  This is how we differentiate which vm gets the ELK stack downloaded on it.  We don't want it on our `webservers` group, so that is why they are grouped differently.
+*It is important to note that in the `install-elk.yml` we label the hosts as `elk` which references `elk` in our `hosts` file.  This is how we differentiate which vm gets the ELK stack downloaded on it.  We don't want it on our `webservers` group, so that is why they are grouped differently.*
 
 # Additional Commands that were used and are helpful!
 | COMMAND |	PURPOSE |
