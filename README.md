@@ -33,7 +33,7 @@ With our jump box, we can provide scaling and segmentation with ease.  Since all
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
-*Why install Filebeat and Metricbeat?
+*Why install Filebeat and Metricbeat?*
 
 **Filebeat** allows us to monitor, locate, and ship log data to a central location (Kibana) where we can analyze it with ease.
 **Metricbeat** allows us to output metrics and statistics to the same central location (Kibana) where we can again analyze it with ease.  
@@ -55,7 +55,7 @@ Only the Jump Box Provisioner can accept connections from the Internet. Access t
 
 Machines within the network can only be accessed by the Jump Box Provisioner.
 
-*The only machine allowed to access the ELK stack server is the Jump Box Provisioner (10.0.0.4).
+*The only machine allowed to access the ELK stack server is the Jump Box Provisioner (10.0.0.4).*
 
 A summary of the access policies in place can be found in the table below.
 |       **Name**      | Publicly Accessible |                  **Allowed IP Addresses**                 |
