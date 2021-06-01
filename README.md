@@ -129,7 +129,7 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
             enabled: yes
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![docker_ps.png](https://github.com/w0lfboy/Cloud-Security/blob/main/docker%20ps.png)
+![docker_ps.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Images/docker%20ps.png)
 
 # Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -140,9 +140,9 @@ This ELK server is configured to monitor the following machines:
 Both *filebeat* and *metricbeat* have been installed on the ELK machine 10.1.0.4
 
 **Filebeat** allows us to monitor, locate, and ship log data to a central location (Kibana) where we can analyze it with ease.
-![filebeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/filebeat%20example.png)
+![filebeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Images/filebeat%20example.png)
 **Metricbeat** allows us to output metrics and statistics to the same central location (Kibana) where we can again analyze it with ease.  
-![metricbeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/metricbeat%20example.png)
+![metricbeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Images/metricbeat%20example.png)
 
 # Using the Playbook
 *In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:*
