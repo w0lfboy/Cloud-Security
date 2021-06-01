@@ -130,3 +130,6 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
           systemd:
             name: docker
             enabled: yes
+
+The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+!(https://github.com/w0lfboy/Cloud-Security/blob/main/docker%20ps.png)
