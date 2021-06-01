@@ -6,7 +6,7 @@
     - Beats in Use
     - Machines Being Monitored
   - How to Use the Ansible Build
-  - Pen Testing the Cloud Environment
+  - ![Pen Testing the Cloud Environment](https://github.com/w0lfboy/Cloud-Security/tree/main/Pen%20Testing%20the%20Cloud%20Environment)
   - Additional Commands Used
 
 
@@ -164,7 +164,7 @@ Both *filebeat* and *metricbeat* have been installed on the ELK machine 10.1.0.4
     ansible-playbook install-elk.yml
 *It is important to note that in the `install-elk.yml` we label the hosts as `elk` which references `elk` in our `hosts` file.  This is how we differentiate which vm gets the ELK stack downloaded on it.  We don't want it on our `webservers` group, so that is why they are grouped differently.*
 
-# Pen Testing the Cloud Environment
+# ![Pen Testing the Cloud Environment](https://github.com/w0lfboy/Cloud-Security/tree/main/Pen%20Testing%20the%20Cloud%20Environment)
 In this scenario, I acted as a cloud architect that has been tasked with setting up an ELK server to gather logs for the Incident Response team.
 Before I hand over the server to the IR team, my senior architect has asked that I verify the ELK server is working as expected and pulling both logs and metrics from the pen-testing web servers.
 I have three tasks:
