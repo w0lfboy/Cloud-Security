@@ -133,3 +133,18 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 ![docker_ps.png](https://github.com/w0lfboy/Cloud-Security/blob/main/docker%20ps.png)
+
+# Target Machines & Beats
+This ELK server is configured to monitor the following machines:
+  - Web 1 VM 10.0.0.9
+  - Web 2 VM 10.0.0.8
+  - Web 3 VM 10.0.0.13
+
+Both *filebeat* and *metricbeat* have been installed on the ELK machine 10.1.0.4
+
+**Filebeat** allows us to monitor, locate, and ship log data to a central location (Kibana) where we can analyze it with ease.
+![filebeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/filebeat%20example.png)
+**Metricbeat** allows us to output metrics and statistics to the same central location (Kibana) where we can again analyze it with ease.  
+![metricbeat_example.png](https://github.com/w0lfboy/Cloud-Security/blob/main/metricbeat%20example.png)
+
+
