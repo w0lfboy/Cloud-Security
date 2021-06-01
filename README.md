@@ -74,14 +74,16 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
 
 [Install-Elk Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Install-Elk.yml) Walkthrough
   - When creating a playbook, we first need to name it, create it `nano Install-Elk.yml`, and create a header.  In this instance, we named it `Install-Elk.yml`
-    ```---
+    ```
+       ---
          - name: Configure Elk VM with Docker
            hosts: elk
            remote_user: redadmin
            become: true
            tasks:
   - Now tasks are added to the playbook, starting with apt packages `Install docker.io` and `Install python3-pip`
-    ```- name: Install docker.io
+    ```
+       - name: Install docker.io
          apt:
            update_cache: yes
            force_apt_get: yes
@@ -94,12 +96,14 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
            name: python3-pip
            state: present
   -  We also had to install the following `pip` package that is the Python client for Docker.  This is required by Ansible to control the state of Docker containers.
-     ```- name: Install Docker module
+     ```
+        - name: Install Docker module
           pip:
             name: docker
             state: present
   -  Next, we had to increase system memory to `262144` using Ansible's `sysctl` module.  We also had to ensure that it will run automatically when the vm is restarted.
-     ```- name: Increase virtual memory
+     ```
+        - name: Increase virtual memory
           command: sysctl -w vm.max_map_count=262144
 
         - name: Use more memory
@@ -109,7 +113,8 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
             state: present
             reload: yes
   -  After the memory is increased, we actually had to include the Docker `elk` container! 
-     ```- name: download and launch a docker elk container
+     ```
+        - name: download and launch a docker elk container
           docker_container:
             name: elk
             image: sebp/elk:761
@@ -120,7 +125,8 @@ Ansible was used to automate configuration of the ELK machine. By creating playb
               -  9200:9200
               -  5044:5044
   -  The final step is to ensure that `docker` starts on a system reboot automatically.
-     ```- name: Enable service docker on boot
+     ```
+        - name: Enable service docker on boot
           systemd:
             name: docker
             enabled: yes
