@@ -50,7 +50,7 @@ The configuration details of each machine may be found below.
 
 # Access Policies
 **The machines on the internal network are not exposed to the public Internet.**
-Only the Jump Box Provisioner can accept connections from the Internet. Access to this machine is only allowed from the IP address 71.115.3.39
+Only the Jump Box Provisioner and the Load Balancer can accept connections from my public IP address. Access to these machines are only allowed from the IP address 71.115.3.39
 
 Machines within the network can only be accessed by the Jump Box Provisioner.
 
@@ -64,7 +64,7 @@ A summary of the access policies in place can be found in the table below.
 |        Web-2        |          No         | 10.0.0.4 on SSH port 22 and 71.115.3.39 via Load Balancer |
 |        Web-3        |          No         | 10.0.0.4 on SSH port 22 and 71.115.3.39 via Load Balancer |
 | Django VM ELK Stack |          No         |  10.0.0.4 on SSH port 22 and 71.115.3.39 on TCP port 5601 |
-|    Load Balancer    |          No         |                71.115.3.39 on HTTP port 80                |
+|    Load Balancer    |          Yes        |                71.115.3.39 on HTTP port 80                |
 
 # ELK Configuration
 Ansible was used to automate configuration of the ELK machine. By creating playbooks to suit our needs, we were able to quickly construct vm's that we would quickly install by running a given playbook.  Not only was this helpful for creating the ELK machine and the DVWA vm's, but we could create many more with our playbooks very quickly, or take them down quickly if for some reason one of the vm's is compromised.  Our ansible container also allowed us to monitor the status of all of our vm's at the same time.
