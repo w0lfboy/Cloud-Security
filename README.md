@@ -67,12 +67,12 @@ A summary of the access policies in place can be found in the table below.
 |    Load Balancer    |          Yes        |                71.115.3.39 on HTTP port 80                |
 
 # ELK Configuration
-Ansible was used to automate configuration of the ELK machine. By creating playbooks to suit our needs, we were able to quickly construct vm's that we would quickly install by running a given playbook.  Not only was this helpful for creating the ELK machine and the DVWA vm's, but we could create many more with our playbooks very quickly, or take them down quickly if for some reason one of the vm's is compromised.  Our ansible container also allowed us to monitor the status of all of our vm's at the same time.
+Ansible was used to automate the configuration of the ELK machine. By creating playbooks to suit our needs, we were able to quickly construct vm's that we would quickly install by running a given playbook.  Not only was this helpful for creating the ELK machine and the DVWA vm's, but we could create many more with our playbooks very quickly, or take them down quickly if for some reason one of the vm's is compromised.  Our ansible container also allowed us to monitor the status of all of our vm's at the same time.
 
 *as a prerequisite, the virtual machine must first be created with the appropriate memory parameters (minimum of 4gb) and added to the ansible hosts file in a new group named "elk"  Once this is complete, we may install the playbook below.*
 
 [Install-Elk Playbook](https://github.com/w0lfboy/Cloud-Security/blob/main/Ansible/Install-Elk.yml) Walkthrough
-  - When creating a playbook, we first need to name it, create it `nano Install-Elk.yml`, and create a header.  In this instance, we named it `Install-Elk.yml`
+  - When creating a playbook, we first need to name it, create it `$ nano Install-Elk.yml`, and create a header.  In this instance, we named it `Install-Elk.yml`
     ```
        ---
          - name: Configure Elk VM with Docker
@@ -173,7 +173,7 @@ I have three tasks:
   - Generate a high amount of web requests to your pen-testing servers and make sure that Kibana is picking them up.
 
 ## SSH Barrage
-To start, I attempted to login with an incorrect username `ssh sysadmin@10.0.0.9` multiple times.  Then, I monitored the failed attempts through the Kibana log stream as seen below.
+To start, I attempted to login with an incorrect username `$ ssh sysadmin@10.0.0.9` multiple times.  Then, I monitored the failed attempts through the Kibana log stream as seen below.
 ![SSH_Barrage.png](https://github.com/w0lfboy/Cloud-Security/blob/main/Pen%20Testing%20the%20Cloud%20Environment/SSH-Barrage/SSH%20barrage.png)
 
 Then, to make it more interesting, I barraged all three Web VMs at once.
@@ -191,7 +191,7 @@ To start I load and attach to my ansible container.
 $ sudo docker start angry_engelbart
 $ sudo docker attach angry_engelbart
 ```
-SSH into `Web-1 VM` `ssh redadmin@10.0.0.9`
+SSH into `Web-1 VM` `$ ssh redadmin@10.0.0.9`
 Run `$ sudo apt install stress` to acquire the stress program
 Run `$ sudo stress --cpu 1` 
 
@@ -231,6 +231,6 @@ And that completes our penetration test!
 | sudo docker run -ti cyberxsecurity/ansible bash	| run and create a docker image |
 | sudo docker start <image-name>	| starts the image specified |
 | sudo docker ps -a	| list all active/inactive containers |
-| sudo docker attach <image-name>	| effectively sshing into the ansible |
+| sudo docker attach <image-name>	| effectively ssh into the ansible |
 | ssh-keygen	| create a ssh key |
 | ansible -m ping all	| check the connection of ansible containers |
